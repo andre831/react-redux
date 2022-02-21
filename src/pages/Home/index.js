@@ -5,6 +5,7 @@ import { api } from "../../services/api";
 import Container from '../../components/Container';
 import Wrapper from '../../components/Wrapper';
 import Card from "../../components/Card";
+import { addReserve } from '../../store/modules/reserve/actions';
 
 function Home() {
     const dispatch = useDispatch();
@@ -23,13 +24,8 @@ function Home() {
 
     
     function addTrip(trip){
-        dispatch({
-            type:'ADD_RESERVE',
-            trip
-        });
-
-        console.log('funcionou');
-    }
+        dispatch(addReserve(trip));
+    };
 
     return (
         <Container>
