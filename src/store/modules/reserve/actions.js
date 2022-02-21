@@ -1,6 +1,13 @@
-function addReserve(trip){
+function addReserveRequest(id){
     return {
-        type:'ADD_RESERVE',
+        type:'ADD_RESERVE_REQUEST',
+        id
+    };
+};
+
+function addReserveSuccess(trip){
+    return {
+        type:'ADD_RESERVE_SUCCESS',
         trip
     };
 };
@@ -13,4 +20,4 @@ function removeReserve(id){
 };
 
 
-export { addReserve, removeReserve };
+export {addReserveRequest, addReserveSuccess, removeReserve };

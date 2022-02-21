@@ -5,7 +5,7 @@ import { api } from "../../services/api";
 import Container from '../../components/Container';
 import Wrapper from '../../components/Wrapper';
 import Card from "../../components/Card";
-import { addReserve } from '../../store/modules/reserve/actions';
+import { addReserveRequest } from '../../store/modules/reserve/actions';
 
 function Home() {
     const dispatch = useDispatch();
@@ -23,8 +23,8 @@ function Home() {
     }, []);
 
     
-    function addTrip(trip){
-        dispatch(addReserve(trip));
+    function addTrip(id){
+        dispatch(addReserveRequest(id));
     };
 
     return (
@@ -37,7 +37,7 @@ function Home() {
                                 folder={item.image}
                                 id={item.id} title={item.title}
                                 status={item.status}
-                                actionButton={()=>addTrip(item)}
+                                actionButton={()=>addTrip(item.id)}
                                 textButton="Reservar"
                             />
                         );
